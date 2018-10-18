@@ -1,0 +1,208 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+  <link rel="stylesheet" href="codemirror.css">
+  <title>d3-sankey-diagram</title>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300);
+
+    html {
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #333;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    h1 {
+      font-weight: normal;
+      font-size: 2.5em;
+    }
+
+    h2 {
+      margin-top: 2.5em;
+    }
+
+    a {
+      color: #4078c0;
+      text-decoration: none;
+    }
+
+    a:hover, a:active {
+      text-decoration: underline;
+    }
+
+
+    #sankey {
+      height: 1000px;
+    }
+
+    #try-sankey, #try {
+      height: 400px;
+    }
+
+    #try .CodeMirror {
+      height: 100%;
+      border-radius: 7px;
+    }
+
+    .source {
+      margin: 0.5em;
+      font-size: small;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #555;
+    }
+
+    .source a {
+      color: #558;
+    }
+
+    svg .link {
+      opacity: 0.8;
+      fill: steelblue;
+    }
+
+    svg .link:hover {
+      opacity: 1;
+    }
+
+    svg g.sankey {
+      font-size: 10pt;
+    }
+    svg .node line {
+      stroke-width: 1px;
+      stroke: #000;
+    }
+    svg .node-type-process line {
+      stroke-width: 4px;
+      stroke: #888;
+    }
+
+    svg .group rect {
+      fill: #eee;
+      stroke: #bbb;
+      stroke-width: 0.5px;
+    }
+
+    svg .group text {
+      fill: #999;
+    }
+
+    .row {
+      display: flex;
+      margin: 0 -1em;
+    }
+
+    .row-full-width {
+      margin: 1rem -9999rem;
+      padding: 1rem 9998rem;
+      padding-top: 0;
+      background-color: rgba(31, 119, 180, 0.2);
+    }
+
+    .row-full-width:first-child {
+      margin-top: 0;
+    }
+
+    .box {
+      flex: 1 0 0;
+      padding: 0 1em;
+    }
+
+    .box .sankey {
+      height: 200px;
+    }
+
+    .box h3 {
+      margin-bottom: 0.5em;
+    }
+
+    .box p {
+      font-size: 0.9rem;
+    }
+
+    .btn-group {
+      display: flex;
+    }
+
+    .btn-group button {
+      margin: 0;
+      padding: 0.3em 0.5em;
+      background: transparent;
+      border: 1px solid white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-group button + button {
+      margin-left: -1px;
+    }
+
+    .btn-group button:first-child:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .btn-group button:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    .btn-group button:last-child:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .btn-group button.active {
+      background: #eee;
+      cursor: default;
+    }
+
+    .btn-group button.active:hover {
+      background: #eee;
+    }
+
+    .btn-group button:hover {
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- <small>ricklupton / <a href="https://github.com/ricklupton/d3-sankey-diagram">d3-sankey-diagram</a></small> -->
+  <table>
+    <tr>
+      <td style="transform: rotate(-90deg);font-weight: bold;font-size: x-large;">Foros de AtariAge</td>
+      <td>
+        <span id="sankey">
+          <svg width="1200" height="1200"></svg>
+        </span></td>
+      <td style="transform: rotate(-90deg);font-weight: bold;font-size: x-large;">Temas identificados autom&aacute;ticamente</td>
+    </tr>
+  </table>
+
+  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+  <script src="d3-sankey-diagram.min.js" charset="utf-8"></script>
+  <script>
+    var layout = d3.sankey()
+                  .extent([[200, 10], [1040, 1180]]);
+
+    var diagram = d3.sankeyDiagram()
+                    .linkTitle(d3.sankeyLinkTitle(function (d) { return d.title; },
+                                                  function(d) { return d.title; },
+                                                  d3.format('.3s')))
+                    .linkColor(function(d) { return d.color; });
+
+    d3.json('sankey_atari.json', function(atari) {
+      layout.ordering(atari.order);
+      var el = d3.select('#sankey svg')
+                .datum(layout(atari))
+                .call(diagram.groups(atari.groups));
+    });
+  </script>
+
+  
+  </body>
+</html>

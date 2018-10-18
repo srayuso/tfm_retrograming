@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+  <title>User ranks</title>
+  <meta charset="utf-8">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@4.2.0/build/vega.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc4/build/vega-lite.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.18.2/build/vega-embed.js"></script>
+
+  <style media="screen">
+    /* Add space between Vega-Embed links  */
+    .vega-actions a {
+      margin-right: 5px;
+    },
+    .id {
+      width: 750;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <h1>User ranks</h1>
+  <!-- Container for the visualization -->
+  <div id="vis1"></div>
+  <div id="vis2"></div>
+
+
+  <div id="vis_aa1"></div>
+
+  <script>
+  /////////////////////////////////
+  var vlSpec1 = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "width": 500,
+    "height": 500,
+    "data": { "url": "planetvb_user_ranks.json"},
+    "mark": "point",
+    "encoding": {
+      "x": {"field": "inDegree", "type": "quantitative", "scale": {"type": "log"}},
+      "y": {
+        "field": "pagerank", "type": "quantitative",
+        "axis": {"title": "Pagerank"}
+      },
+      "color": {"field": "rank", "type": "nominal"},
+      "size": {"field": "num_posts", "type": "quantitative"}
+    }
+  };
+  vegaEmbed("#vis1", vlSpec1);
+  
+  ////////////////////////////
+  // var vlSpec2 = {
+  //   "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  //   "width": 500,
+  //   "height": 500,
+  //   "data": { "url": "planetvb_user_ranks.json"},
+  //   "mark": "point",
+  //   "encoding": {
+  //     "x": {"field": "rank", "type": "nominal", "sort": ["Newbie", "VB Gamer", "Virtual Freak", "Nintendoid!", "VUE(xpert)", "PVB Elite", "PVB Staff"]},
+  //     "y": {
+  //       "field": "pagerank", "type": "quantitative",
+  //       "axis": {"title": "Pagerank"}
+  //     },
+  //     "color": {"field": "inDegree", "type": "quantitative"},
+  //     "size": {"field": "num_posts", "type": "quantitative"}
+  //   }
+  // };
+
+  var vlSpec2 = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "background": "white",
+    "width": 900,
+    "height": 600,
+    "data": { "url": "planetvb_user_ranks.json"},
+    "mark": "point",
+    "encoding": {
+      "x": {
+        "field": "pagerank", "type": "quantitative",
+        "axis": {"title": "Pagerank"}
+      },
+      "y": {"field": "rank", "type": "nominal", "sort": ["PVB Staff", "PVB Elite", "VUE(xpert)", "Nintendoid!", "Virtual Freak", "VB Gamer", "Newbie"], "axis": {"title": "Planet Virtual Boy Badge"}},
+      "color": {
+        "field": "posts",
+        "type": "nominal",
+        "scale": {"range": ["black"]},
+        "legend": null},
+      "size": {"field": "num_posts", "type": "quantitative", "axis": {"title": "Num. posts"}}
+    }
+  };
+  vegaEmbed("#vis2", vlSpec2);
+  
+  ////////////////////////////
+  var vlSpec_aa1 = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "background": "white",
+    "width": 900,
+    "height": 600,
+    "data": { "url": "atariage_user_ranks.json"},
+    "mark": "point",
+    "encoding": {
+      "x": {
+        "field": "pagerank", "type": "quantitative", "scale": {"type": "linear", "domain": [0,250]},
+        "axis": {"title": "Pagerank"}, 
+      },
+      "y": {"field": "rank", "type": "nominal", "sort": ["Quadrunner", "River Patroller", "Stargunner", "Dragonstomper", "Moonsweeper", "Chopper Commander", "Star Raider", "Space Invader", "Combat Commando"], "axis": {"title": "AtariAge Badge"}},
+      "size": {"field": "posts", "type": "quantitative", "axis": {"title": "Num. posts"}},
+      "color": {
+        "field": "posts",
+        "type": "nominal",
+        "scale": {"range": ["black"]},
+        "legend": null
+      }
+    }
+  };
+  vegaEmbed("#vis_aa1", vlSpec_aa1);
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@4.2.0"></script>
+</head>
+<body>
+  <div>
+    No he conseguido ejecutar el codigo aqui. Hay que copiar el contenido de vega_term_weights.json y pegarlo en http://trifacta.github.io/vega/editor/
+  </div>
+  <div id="view"></div>
+  <script type="text/javascript">
+    var view;
+
+    vega.loader()
+      .load('vega_term_weights.json')
+      .then(function(data) { render(JSON.parse(data)); });
+
+    function render(spec) {
+      view = new vega.View(vega.parse(spec))
+        .renderer('canvas')  // set renderer (canvas or svg)
+        .initialize('#view') // initialize view within parent DOM container
+        .hover()             // enable hover encode set processing
+        .run();
+    }
+  </script>
+</body>

@@ -1,0 +1,51 @@
+
+{
+  "comment": "PARA PEGAR EN http://trifacta.github.io/vega/editor/",
+  "$schema": "https://vega.github.io/schema/vega/v4.json",
+  "width": 800,
+  "height": 400,
+  "padding": 0,
+
+  "data": [
+    {
+      "name": "table",
+      "values": [{"text": "auction", "value": 31}, {"text": "800", "value": 13}, {"text": "cable", "value": 13}, {"text": "keyboard", "value": 13}, {"text": "map", "value": 10}, {"text": "ld", "value": 10}, {"text": "cpu", "value": 12}, {"text": "drives", "value": 10}, {"text": "port", "value": 10}, {"text": "thread", "value": 11}, {"text": "space", "value": 15}, {"text": "jaguar", "value": 11}, {"text": "playfield", "value": 11}, {"text": "buy", "value": 30}, {"text": "set", "value": 15}, {"text": "always", "value": 14}, {"text": "kernel", "value": 10}, {"text": "cartridge", "value": 12}, {"text": "xl", "value": 12}, {"text": "guys", "value": 13}, {"text": "nt", "value": 10}, {"text": "geo", "value": 11}, {"text": "8888", "value": 10}, {"text": "code", "value": 20}, {"text": "ti", "value": 12}, {"text": "rare", "value": 15}, {"text": "com", "value": 19}, {"text": "downloads", "value": 10}, {"text": "genesis", "value": 12}, {"text": "atr", "value": 12}, {"text": "power", "value": 14}, {"text": "ps2", "value": 12}, {"text": "160", "value": 12}, {"text": "controller", "value": 19}, {"text": "nes", "value": 19}, {"text": "collection", "value": 14}, {"text": "st", "value": 11}, {"text": "intellivision", "value": 11}, {"text": "apple", "value": 10}, {"text": "chip", "value": 12}, {"text": "colors", "value": 13}, {"text": "level", "value": 13}, {"text": "unknown", "value": 10}, {"text": "songs", "value": 10}, {"text": "love", "value": 13}, {"text": "aes", "value": 10}, {"text": "please", "value": 11}, {"text": "money", "value": 17}, {"text": "upgrade", "value": 12}, {"text": "00000000", "value": 11}, {"text": "program", "value": 12}, {"text": "fpga", "value": 10}, {"text": "display", "value": 10}, {"text": "tv", "value": 11}, {"text": "read", "value": 10}, {"text": "device", "value": 11}, {"text": "machine", "value": 12}, {"text": "ii", "value": 11}, {"text": "shipping", "value": 21}, {"text": "load", "value": 11}, {"text": "super", "value": 14}, {"text": "left", "value": 10}, {"text": "points", "value": 18}, {"text": "software", "value": 11}, {"text": "gb", "value": 11}, {"text": "fun", "value": 17}, {"text": "screen", "value": 28}, {"text": "team", "value": 13}, {"text": "cd", "value": 10}, {"text": "playing", "value": 18}, {"text": "youtube", "value": 10}, {"text": "pokey", "value": 11}, {"text": "pin", "value": 12}, {"text": "136", "value": 10}, {"text": "neogeo", "value": 10}, {"text": "bytes", "value": 11}, {"text": "controllers", "value": 14}, {"text": "graphics", "value": 13}, {"text": "enough", "value": 11}, {"text": "target", "value": 10}, {"text": "de", "value": 10}, {"text": "goto", "value": 11}, {"text": "ntsc", "value": 13}, {"text": "end", "value": 11}, {"text": "without", "value": 10}, {"text": "sell", "value": 21}, {"text": "bb", "value": 10}, {"text": "remember", "value": 10}, {"text": "gosub", "value": 10}, {"text": "neo-geo", "value": 10}, {"text": "bad", "value": 11}, {"text": "print", "value": 11}, {"text": "128", "value": 11}, {"text": "cib", "value": 15}, {"text": "db", "value": 10}, {"text": "mario", "value": 19}, {"text": "sdx", "value": 11}, {"text": "far", "value": 10}, {"text": "a8", "value": 12}, {"text": "real", "value": 11}, {"text": "xb", "value": 11}, {"text": "sega", "value": 16}, {"text": "king", "value": 10}, {"text": "player", "value": 14}, {"text": "data", "value": 14}, {"text": "bid", "value": 18}, {"text": "minutes", "value": 16}, {"text": "basic", "value": 12}, {"text": "snk", "value": 10}, {"text": "seems", "value": 10}, {"text": "snes", "value": 10}, {"text": "5200", "value": 12}, {"text": "music", "value": 16}, {"text": "label", "value": 17}, {"text": "year", "value": 11}, {"text": "possible", "value": 11}, {"text": "problem", "value": 13}, {"text": "sta", "value": 12}, {"text": "etc", "value": 10}, {"text": "2600", "value": 34}, {"text": "items", "value": 15}, {"text": "attached", "value": 13}, {"text": "samsung", "value": 10}, {"text": "drive", "value": 13}, {"text": "bought", "value": 12}, {"text": "rom", "value": 14}, {"text": "thought", "value": 11}, {"text": "played", "value": 17}, {"text": "4k", "value": 10}, {"text": "file", "value": 12}, {"text": "xe", "value": 12}, {"text": "digital", "value": 11}, {"text": "joystick", "value": 12}, {"text": "wii", "value": 12}, {"text": "item", "value": 23}, {"text": "color", "value": 12}, {"text": "ram", "value": 18}, {"text": "vdp", "value": 11}, {"text": "said", "value": 13}, {"text": "works", "value": 12}, {"text": "week", "value": 12}, {"text": "thank", "value": 11}, {"text": "floppy", "value": 10}, {"text": "hard", "value": 10}, {"text": "video", "value": 23}, {"text": "list", "value": 15}, {"text": "os", "value": 12}, {"text": "metal", "value": 10}, {"text": "getting", "value": 12}, {"text": "manual", "value": 11}, {"text": "fighters", "value": 10}, {"text": "lda", "value": 12}, {"text": "sound", "value": 15}, {"text": "picture", "value": 11}, {"text": "MEM", "value": 23}, {"text": "sold", "value": 18}, {"text": "price", "value": 26}, {"text": "ebay", "value": 100}, {"text": "case", "value": 12}, {"text": "japanese", "value": 11}, {"text": "card", "value": 12}, {"text": "ff", "value": 10}, {"text": "console", "value": 19}, {"text": "systems", "value": 14}, {"text": "call", "value": 17}, {"text": "mini", "value": 10}, {"text": "help", "value": 11}, {"text": "hardware", "value": 14}, {"text": "song", "value": 10}, {"text": "sounds", "value": 10}, {"text": "r0", "value": 11}, {"text": "sprites", "value": 12}, {"text": "files", "value": 16}, {"text": "computer", "value": 13}, {"text": "scanline", "value": 11}, {"text": "found", "value": 14}, {"text": "least", "value": 10}, {"text": "pitfall", "value": 14}, {"text": "score", "value": 11}, {"text": "7800", "value": 15}, {"text": "disks", "value": 10}, {"text": "board", "value": 14}, {"text": "chips", "value": 12}, {"text": "best", "value": 17}, {"text": "run", "value": 14}, {"text": "working", "value": 11}, {"text": "byte", "value": 22}, {"text": "tune", "value": 10}, {"text": "xbox", "value": 10}, {"text": "star", "value": 15}, {"text": "boot", "value": 11}, {"text": "pc", "value": 11}, {"text": "mode", "value": 12}, {"text": "jag", "value": 10}, {"text": "nintendo", "value": 19}, {"text": "rem", "value": 11}, {"text": "amiga", "value": 11}, {"text": "anthony", "value": 11}, {"text": "e5", "value": 10}, {"text": "pal", "value": 21}, {"text": "line", "value": 12}, {"text": "point", "value": 10}, {"text": "usa", "value": 12}, {"text": "button", "value": 10}, {"text": "dos", "value": 11}, {"text": "number", "value": 11}, {"text": "neo", "value": 11}, {"text": "min", "value": 12}, {"text": "pay", "value": 11}, {"text": "supply", "value": 11}, {"text": "memory", "value": 13}, {"text": "row", "value": 10}, {"text": "assembly", "value": 11}, {"text": "place", "value": 14}, {"text": "complete", "value": 11}, {"text": "c64", "value": 11}, {"text": "disk", "value": 13}, {"text": "ever", "value": 12}, {"text": "seller", "value": 21}, {"text": "keep", "value": 11}, {"text": "cool", "value": 13}, {"text": "address", "value": 11}, {"text": "start", "value": 11}, {"text": "arcade", "value": 21}],
+      "transform": [
+        {
+          "type": "wordcloud",
+          "text": "data.text",
+          "font": "Arial",
+          "fontSize": "data.value",
+          "rotate": {"random": [-60,-30,0,30,60]}
+        }
+      ]
+    }
+  ],
+
+
+
+  "marks": [
+    {
+      "type": "text",
+      "from": {"data": "table"},
+      "properties": {
+        "enter": {
+          "x": {"field": "x"},
+          "y": {"field": "y"},
+          "angle": {"field": "angle"},
+          "align": {"value": "center"},
+          "baseline": {"value": "alphabetic"},
+          "font": {"field": "font"},
+          "fontSize": {"field": "fontSize"},
+          "text": {"field": "data.text"}
+        },
+        "update": {
+          "fill": {"value": "steelblue"}
+        },
+        "hover": {
+          "fill": {"value": "#f00"}
+        }
+      }
+    }
+  ]
+}

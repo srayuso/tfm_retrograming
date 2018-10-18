@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>
+  <title>Forum stats</title>
+  <meta charset="utf-8">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@4.2.0/build/vega.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc4/build/vega-lite.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.18.2/build/vega-embed.js"></script>
+
+  <style media="screen">
+    /* Add space between Vega-Embed links  */
+    .vega-actions a {
+      margin-right: 5px;
+    },
+    .id {
+      width: 1200px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Forum stats</h1>
+  <!-- Container for the visualization -->
+
+  <h3>PlanetVB</h3>
+  <div id="pvb_histogram_concat"></div>
+
+  <h3>AtariAge</h3>
+  <div id="aa_histogram_concat"></div>
+
+  <script>
+
+  
+  ////////////////////////////
+var vb_concat = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "background": "white",
+  "hconcat": [{
+    "width": 750,
+    "height": 500,
+    "data": {"url": "vb_thread_stats.json"},
+    "transform": [
+      {"filter": {"field": "posts", "lte": 50}}
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "bin": {"step": 2.5, "extent": [0, 50]},
+        "field": "posts",
+        "type": "quantitative",
+        "axis": {"title": "Num. mensajes por hilo"}
+      },
+      "y": {
+        "aggregate": "count",
+        "type": "quantitative",
+        "axis": {"title": "Num. hilos"}
+      },
+      "color": {
+        "field": "posts",
+        "type": "nominal",
+        "scale": {"range": ["black"]},
+        "legend": null
+      }
+    }
+  },{
+    "width": 750,
+    "height": 500,
+    "data": {"url": "vb_user_stats.json"},
+    "transform": [
+      {"filter": {"field": "posts", "lte": 50}}
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "bin": {"step": 2.5, "extent": [0, 50]},
+        "field": "posts",
+        "type": "quantitative",
+        "axis": {"title": "Num. mensajes por autor"}
+      },
+      "y": {
+        "aggregate": "count",
+        "type": "quantitative",
+        "axis": {"title": "Num. autores"}
+      },
+      "color": {
+        "field": "posts",
+        "type": "nominal",
+        "scale": {"range": ["black"]},
+        "legend": null
+      }
+    }
+  }
+]
+};
+  vegaEmbed("#pvb_histogram_concat", vb_concat);
+
+
+  
+  ////////////////////////////
+var aa_concat = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "background": "white",
+  "hconcat": [{
+    "width": 750,
+    "height": 500,
+    "data": {"url": "aa_thread_stats.json"},
+    "transform": [
+      {"filter": {"field": "posts", "lte": 50}}
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "bin": {"step": 2.5, "extent": [0, 50]},
+        "field": "posts",
+        "type": "quantitative",
+        "axis": {"title": "Num. mensajes por hilo"}
+      },
+      "y": {
+        "aggregate": "count",
+        "type": "quantitative",
+        "axis": {"title": "Num. hilos"}
+      },
+      "color": {
+        "field": "posts",
+        "type": "nominal",
+        "scale": {"range": ["black"]},
+        "legend": null
+      }
+    }
+  },{
+    "width": 750,
+    "height": 500,
+    "data": {"url": "aa_user_stats.json"},
+    "transform": [
+      {"filter": {"field": "posts", "lte": 50}}
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "bin": {"step": 2.5, "extent": [0, 50]},
+        "field": "posts",
+        "type": "quantitative",
+        "axis": {"title": "Num. mensajes por autor"}
+      },
+      "y": {
+        "aggregate": "count",
+        "type": "quantitative",
+        "axis": {"title": "Num. autores"}
+      },
+      "color": {
+        "field": "posts",
+        "type": "nominal",
+        "scale": {"range": ["black"]},
+        "legend": null
+      }
+    }
+  }
+]
+};
+  vegaEmbed("#aa_histogram_concat", aa_concat);
+
+  </script>
+</body>
+</html>
